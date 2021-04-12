@@ -1,0 +1,568 @@
+.hidden {
+  display: none;
+}
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+div {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.25);
+}
+header .nav-menu {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background-color: white;
+}
+header h1 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: -2px;
+  margin-left: 16px;
+  margin-right: 32px;
+}
+@media only screen and (max-width: 710px) {
+  header h1 {
+    margin: -2px 0 0;
+  }
+}
+header h1:hover {
+  outline: 2px solid black;
+}
+header h4 {
+  display: block;
+  height: 100%;
+  padding: 8px 15px;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #d0d0d0;
+}
+header h4:hover {
+  background-color: white;
+  color: #333;
+}
+header button {
+  border: none;
+  margin: auto 0;
+}
+@media only screen and (max-width: 710px) {
+  header button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+header button:first-of-type {
+  margin-right: 16px;
+}
+header button i {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+}
+header button i:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+header button:hover {
+  outline: 2px solid black;
+}
+header .search-button {
+  display: none;
+}
+@media only screen and (max-width: 710px) {
+  header .search-button {
+    display: inline-block;
+  }
+}
+header .search-bar {
+  display: block;
+  position: relative;
+  border: 2px solid #777;
+  border-radius: 5px;
+  width: 100%;
+  margin-right: 16px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 710px) {
+  header .search-bar {
+    display: none;
+  }
+  header .search-bar.active {
+    display: block;
+    width: calc(100% - 24px);
+  }
+}
+header .search-bar input {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% - 2.125rem);
+  padding-left: 6px;
+  border: none;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  vertical-align: baseline;
+}
+header .search-bar input::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+header .search-bar input:focus {
+  outline: none;
+}
+header .search-bar a {
+  position: absolute;
+  width: 2.125rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  padding: auto;
+}
+header .search-bar i {
+  position: relative;
+  color: #777;
+  width: 2rem;
+  height: 2rem;
+}
+header .search-bar i:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+}
+header .departments {
+  width: 100%;
+  background-color: #333;
+}
+@media only screen and (max-width: 710px) {
+  header .departments {
+    display: none;
+  }
+}
+header .scrolling {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+header .scrolling::-webkit-scrollbar {
+  display: none;
+}
+@media only screen and (min-width: 1070px) {
+  header .scrolling {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: fit-content;
+  }
+}
+
+section {
+  padding: 22px 16px 36px;
+}
+@media only screen and (min-width: 1300px) {
+  section {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+section h3 {
+  margin-bottom: 15px;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 700;
+}
+section .scrolling {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+section .scrolling::-webkit-scrollbar {
+  display: none;
+}
+@media only screen and (min-width: 1070px) {
+  section .scrolling {
+    max-width: 1280px;
+    white-space: normal;
+    overflow: auto;
+  }
+}
+section .item {
+  margin-right: 16px;
+}
+section .item:last-of-type {
+  margin-right: 0;
+}
+section .item.active {
+  cursor: grabbing;
+  webkit-cursor: grabbing;
+}
+section .item img {
+  border: 1px solid rgba(221, 221, 221, 0.637);
+  border-radius: 3px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.04);
+  width: 200px;
+  height: auto;
+}
+@media only screen and (max-width: 710px) {
+  section .item img {
+    width: 140px;
+  }
+}
+section .item:hover {
+  background-color: #eaeaea;
+}
+section .item-title {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  white-space: normal;
+  margin-top: 6px;
+}
+@media only screen and (min-width: 710px) {
+  section .item-title {
+    font-size: 20px;
+  }
+}
+section .item-vendor {
+  font-weight: "neue-haas-grotesk-display", sans-serif;
+  font-family: 300;
+  font-size: 12px;
+  color: #888;
+}
+@media only screen and (min-width: 710px) {
+  section .item-vendor {
+    font-size: 14px;
+  }
+}
+section .item-price {
+  font-family: "yoon-a-meolijeongche", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #666;
+  margin-top: 6px;
+}
+@media only screen and (min-width: 710px) {
+  section .item-price {
+    font-size: 17px;
+  }
+}
+
+.curated-positioning {
+  padding: 0;
+}
+@media only screen and (min-width: 1070px) {
+  .curated-positioning {
+    width: 100%;
+    padding: 0px 16px;
+  }
+}
+
+.curated {
+  height: 72px;
+  padding: 22px 16px;
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+.curated::-webkit-scrollbar {
+  display: none;
+}
+.curated button {
+  width: fit-content;
+  height: 30px;
+  padding: 0 16px;
+  border: 1px solid #767676;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #767676;
+  border-radius: 15px;
+  margin-right: 16px;
+}
+.curated button.active {
+  cursor: grabbing;
+  webkit-cursor: grabbing;
+}
+.curated button:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+.curated button:focus {
+  border: 1px solid transparent;
+  outline: 0;
+  box-shadow: 0 0 0 2px #e59700;
+}
+@media only screen and (min-width: 1070px) {
+  .curated {
+    width: fit-content;
+    padding: 22px 0px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1070px) {
+  .desktop-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+.banners {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.banners .slides {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+}
+.banners img {
+  position: absolute;
+  max-width: 100%;
+  display: none;
+  transition: transform 0.9s;
+}
+.banners img.prev {
+  transform: translateX(-100%);
+  display: block;
+}
+.banners img.active {
+  transform: translateX(0%);
+  display: block;
+}
+.banners img.next {
+  transform: translateX(100%);
+  display: block;
+}
+
+.trending {
+  height: auto;
+  width: 100%;
+}
+
+.flash-sale {
+  width: 100%;
+}
+
+.departments-mobile {
+  display: none;
+  margin: 0 0 36px;
+  padding: 0;
+}
+@media only screen and (max-width: 710px) {
+  .departments-mobile {
+    display: block;
+  }
+}
+.departments-mobile header {
+  background-color: #777;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 7px 16px;
+  text-transform: uppercase;
+}
+.departments-mobile h3 {
+  margin-bottom: 0;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-family: 16px;
+  color: #eee;
+}
+.departments-mobile .scrolling {
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.25);
+}
+.departments-mobile h4 {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 27px;
+  color: #333;
+}
+.departments-mobile h4:last-of-type {
+  margin-right: 0;
+}
+
+.top-brands {
+  width: 100%;
+}
+
+.todays-deals {
+  width: 100%;
+}
+
+footer {
+  margin-top: 72px;
+  width: 100%;
+}
+footer .links {
+  background-color: #e5e5e5;
+}
+footer .links a {
+  color: #555;
+}
+@media only screen and (min-width: 710px) {
+  footer .links a {
+    margin-right: 24px;
+  }
+}
+footer .links ul {
+  max-width: 1280px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 710px) {
+  footer .links ul {
+    justify-content: flex-start;
+  }
+}
+@media only screen and (min-width: 1280) {
+  footer .links ul {
+    padding-left: 0;
+    scroll-padding-right: 0;
+  }
+}
+footer .copyright {
+  background-color: #3a3a3a;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 14px 0;
+}
+footer .copyright .desktop-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 1280) {
+  footer .copyright .desktop-container {
+    padding: 0;
+  }
+}
+footer .copyright a {
+  color: #ddd;
+}
+
+.menu button {
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 16px;
+  padding: 12px 18px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+.menu button:last-of-type {
+  margin-bottom: 0;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: white;
+  padding: 16px;
+}
+@media only screen and (max-width: 710px) {
+  .hamburger {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: auto;
+    bottom: 0;
+  }
+}
+.hamburger.hidden {
+  display: none;
+}
+.hamburger button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 24px;
+  margin-right: 24px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+}
+.hamburger section {
+  padding: 8px 16px;
+}
+.hamburger ul {
+  list-style: none;
+}
+.hamburger a {
+  display: inline-block;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 4px 0;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  padding: 16px;
+}
+.cart.hidden {
+  display: none;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  padding: 16px;
+}
+.account.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
